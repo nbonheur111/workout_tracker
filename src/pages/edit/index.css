@@ -1,0 +1,69 @@
+.history-container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+button {
+  margin-right: 5px;
+}
+
+button.edit-btn, button.delete-btn {
+  padding: 1vmin;
+  color: var(--white);
+  background-color: var(--blue-4);
+  font-size: 2vmin;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: .1vmin solid var(--blue-4);
+  border-radius: .5vmin;
+  cursor: pointer;
+  margin: 1vmin;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button.edit-btn:hover, button.delete-btn:hover {
+  background-color: var(--blue-3);
+}
+button,
+a.button {
+  margin: 1vmin;
+  padding: 0.5vmin 1vmin; /* decrease padding to make the button smaller */
+  color: var(--white);
+  background-color: var(--blue-4);
+  font-size: 1.5vmin; /* decrease font size to make the button smaller */
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 0.1vmin solid var(--blue-4); /* update border color to match background */
+}

@@ -1,0 +1,80 @@
+.create-workout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  .create-workout form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 80%;
+    max-width: 700px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+  }
+  
+  .create-workout form h2 {
+    margin-top: 0;
+  }
+  
+  .create-workout form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .create-workout form input,
+  .create-workout form select,
+  .create-workout form textarea {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    align-items: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 1vmin;
+    font-size: 2vmin;
+    border: .1vmin solid var(--blue-3);
+    border-radius: .5vmin;
+    color: var(--text-dark);
+    background-image: none !important; /* prevent lastpass */
+    
+  }
+
+  
+  
+  .create-workout form textarea {
+    height: 100px;
+  }
+  
+  .create-workout form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .create-workout form input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .workout-form .form-group label {
+    font-weight: bold;
+    margin: auto;
+  }
+  .form-group {
+    display: flex;
+    align-items: left;
+  }
