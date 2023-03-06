@@ -3,6 +3,7 @@ import { logIn } from '../../utilities/user-functions';
 import axios from 'axios'
 
 const Login = ({setUser}) => {
+  
 
     const [formState, setFormState] = useState({username: '', password: ''});
     const [error, setError] = useState(null)
@@ -19,6 +20,7 @@ const Login = ({setUser}) => {
         let getSessionInfo = async () => {
           let res = await axios('/session-info')
           console.log(res);
+          console.log("success")
 
           if(res.data.session.passport){
             let user = res.data.session.passport.user;
@@ -44,8 +46,21 @@ const Login = ({setUser}) => {
         event.preventDefault();
         
         try {
-          const response = await logIn(formState);
-          setUser(response.user);
+           await logIn(formState);
+          let getSessionInfo = async () => {
+            let res = await axios('/session-info')
+            console.log(res);
+            console.log("success")
+  
+            if(res.data.session.passport){
+              let user = res.data.session.passport.user;
+              console.log("user..", user)
+              setUser(user)
+            }
+          }
+          getSessionInfo()
+          // setUser(response.user);
+    
         } catch (error) {
           setError(error.message);
         }

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom'
+import { faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import About from '../about'
 import './index.css';
 
@@ -23,8 +26,9 @@ const Footer = () => {
       <div className="contact-us">
         <h3>Contact Us</h3>
         <ul className="contact-info">
-          <li><i className="fas fa-map-marker-alt"></i>123 Main St, Nowhere, USA</li>
-          <li><i className="fas fa-phone"></i>(123) 456-7890</li>
+        <li><FontAwesomeIcon icon={faMapMarkerAlt} /> 123 Main St, Nowhere, USA</li>
+          <li><FontAwesomeIcon icon={faPhone} /> (123) 456-7890</li>
+
         </ul>
       </div>
     </footer>

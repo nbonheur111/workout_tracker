@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
         trim: true,
         minlength: 2
     },
-    fullName:{
+    name:{
         type:String,
         required: true
 
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         minLength: 2,
-        required: false
+        required: true
     }
 
 },

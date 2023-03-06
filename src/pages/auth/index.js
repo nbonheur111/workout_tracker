@@ -5,7 +5,7 @@ import './index.css'
 
 
 const Auth = (props) => {
-  let { setUser } = props;  //destructured from props obj. passed from app.js
+  let { setUser} = props;  //destructured from props obj. passed from app.js
 
   const [isSignup, setIsSignup] = useState(true);
 
@@ -17,7 +17,7 @@ const Auth = (props) => {
   return (
     <section className='auth-page'>
       <div>
-        <h1>LOGO</h1>
+        <h1>WT</h1>
         <div className='login-button' onClick={handleButtonClick}>{isSignup ? "Log In" : "Sign Up"} </div>
 
       </div>

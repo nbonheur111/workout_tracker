@@ -3,6 +3,7 @@ import axios from "axios"
 
 //sign up 
 export const signUp = async (formData) => {
+    console.log(formData)
 
     let serverResponse = await axios ({
         method: "POST",

@@ -43,6 +43,7 @@ app.use(session({
     saveUninitialized: true,
     cookie: { originalMaxAge: 3600000 }
 }))
+app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -123,9 +124,10 @@ app.post('/users/create_user', async (req, res) => {
     let userFromCollection = await User.create({
         email: req.body.email,
         username: req.body.username,
-        fullName: req.body.name,
-        password: req.body.hashedPassword
+        name: req.body.name,
+        password: hashedPassword
     })
+
 
     res.json("user created")
 

@@ -43,6 +43,7 @@ export default class SignupForm extends Component {
         console.log(data)
 
         let response = await signUp(data);
+        console.log(response)
 
 
     }

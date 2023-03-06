@@ -1,13 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import AuthPage from './pages/auth';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import CreateWorkout from './pages/add_workout';
 import WorkoutHistory from './pages/workout_history';
 import EditWorkout from './pages/edit'
 import Navbar from './components/nav';
-import Playlist from './pages/playlist';
 import Footer from './components/footer'
 
 function App() {
@@ -18,12 +17,14 @@ function App() {
     setUser(null);
   };
 
-  return (
-    <div className="App">
 
-      {/*if user does not exist, take them to auth page, if they exist show them the pages */}
-     
-      { user?
+  const returnPage = () => {
+
+    return (
+      <>
+   
+    
+    { user?
 
       <div>
         <Navbar user={user} onLogout={handleLogout}/>
@@ -39,9 +40,22 @@ function App() {
       </div>
 
       :
-      <AuthPage setUser={setUser}/>
+        <AuthPage setUser={setUser} />
 
       }
+     </>
+    )
+
+  }
+
+
+  return (
+    <div className="App">
+
+      {/*if user does not exist, take them to auth page, if they exist show them the pages */}
+      {returnPage()}
+     
+      
     </div>
   );
 }
