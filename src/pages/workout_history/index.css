@@ -5,6 +5,8 @@
   justify-content: space-between;
   align-items: flex-start;
   height: 90vh;
+  margin-left: 50px;
+  
 }
 
 .workout-history {
@@ -14,7 +16,7 @@
 
 .workout-card {
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 12px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;

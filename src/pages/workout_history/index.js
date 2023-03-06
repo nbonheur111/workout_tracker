@@ -23,13 +23,13 @@ const WorkoutHistory = () => {
   }, []);
 
   const handleNext = () => {
-    setStartIndex(startIndex + 3);
-    setVisibleWorkouts(visibleWorkouts + 3);
+    setStartIndex(startIndex + 4);
+    setVisibleWorkouts(visibleWorkouts + 4);
   };
 
   const handlePrev = () => {
-    setStartIndex(startIndex - 3);
-    setVisibleWorkouts(visibleWorkouts - 3);
+    setStartIndex(startIndex - 4);
+    setVisibleWorkouts(visibleWorkouts - 4);
   };
 
   const displayWorkouts = () => {

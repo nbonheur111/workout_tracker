@@ -13,6 +13,8 @@ const Login = ({setUser}) => {
 
     }, [formState]) //set disabled anytime formState changes
 
+
+
     useEffect(() => {
         let getSessionInfo = async () => {
           let res = await axios('/session-info')
@@ -20,7 +22,7 @@ const Login = ({setUser}) => {
 
           if(res.data.session.passport){
             let user = res.data.session.passport.user;
-            console.log("Here we fucking go again", user)
+            console.log("user..", user)
             setUser(user)
           }
         }
@@ -40,10 +42,14 @@ const Login = ({setUser}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        let response = await logIn(formState);
-
-    }
+        
+        try {
+          const response = await logIn(formState);
+          setUser(response.user);
+        } catch (error) {
+          setError(error.message);
+        }
+      }
 
    
   return (

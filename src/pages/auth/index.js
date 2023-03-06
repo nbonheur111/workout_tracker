@@ -5,7 +5,7 @@ import './index.css'
 
 
 const Auth = (props) => {
-  let { setUser } = props;
+  let { setUser } = props;  //destructured from props obj. passed from app.js
 
   const [isSignup, setIsSignup] = useState(true);
 

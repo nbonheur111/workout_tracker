@@ -16,16 +16,20 @@
 
 .footer-links li {
   margin-bottom: 10px;
+  list-style: none;
+  text-align: left;
+  text-decoration: none;
 }
 
 .footer-links a {
   color: #fff;
   font-size: 14px;
   transition: all 0.3s ease-in-out;
+  text-decoration-line: none;
 }
 
 .footer-links a:hover {
-  color: #ccc;
+  color: rgb(197, 122, 122);
 }
 
 .contact-info {
@@ -35,6 +39,8 @@
 
 .contact-info li {
   margin-bottom: 10px;
+  list-style: none;
+  text-align: left;
 }
 
 .contact-info i {

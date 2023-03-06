@@ -12,6 +12,10 @@ const EditWorkout = () => {
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
 
+
+  const [startIndex, setStartIndex] = useState(0); 
+  const [visibleWorkouts, setVisibleWorkouts] = useState(4);
+
   useEffect(() => {
     let fetchData = async () => {
       const serverResponse = await getWorkoutHistory();
@@ -53,6 +57,23 @@ const EditWorkout = () => {
     setDescription('');
     setDate('');
   }
+
+  
+  const handleNext = () => {
+    if (visibleWorkouts < workoutData.length) {
+      setStartIndex(startIndex + 4);
+      setVisibleWorkouts(visibleWorkouts + 4);
+    }
+  };
+
+  const handlePrev = () => {
+    if (startIndex > 0) {
+      setStartIndex(startIndex - 4);
+      setVisibleWorkouts(visibleWorkouts - 4);
+    }
+  };
+  
+const visibleData = workoutData.slice(startIndex, visibleWorkouts);
 
   return (
     <div className='history-container'>
@@ -96,21 +117,41 @@ const EditWorkout = () => {
             </tr>
           </thead>
           <tbody>
-            {workoutData.map((workout) => (
+            {visibleData.map((workout) => (
               <tr key={workout._id}>
                 <td>{new Date(workout.date).toLocaleDateString()}</td>
                 <td>{workout.workout}</td>
                 <td>{workout.duration}</td>
                 <td>{workout.description}</td>
                 <td>
-                  <button className='delete-btn' onClick={() => handleDelete(workout._id)}>Delete</button>
-                  <button className='delete-btn' onClick={() => handleEdit(workout._id)}>Edit</button>
+                  <button className='button' onClick={() => handleDelete(workout._id)}>Delete</button>
+                  <button className='button' onClick={() => handleEdit(workout._id)}>Edit</button>
                 </td>
+                
               </tr>
             ))}
+
           </tbody>
         </table>
       )}
+
+      {/* conditionally render prev and next buttons */}
+
+      <div className="pagination">
+          {startIndex > 0 &&(
+            <button onClick={() => handlePrev()} disabled={startIndex === 0}>Prev</button>
+
+          )}
+          {visibleWorkouts < workoutData.length &&(
+            <button onClick={() => handleNext()} disabled={visibleWorkouts >= workoutData.length}>Next</button>
+            
+        )}
+      </div>
+
+
+      
+
+    
     </div>
   );
 };

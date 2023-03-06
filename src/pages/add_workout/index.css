@@ -2,11 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 0;
+    padding: 100px;
   }
 
   label {
     display: inline-block;
+    width: 100px; 
+    width: calc(100% - 100px); 
     margin-bottom: 0.5rem;
   }
   
@@ -35,7 +38,7 @@
   .create-workout form input,
   .create-workout form select,
   .create-workout form textarea {
-    width: 300px;
+    width: 400px;
     padding: 10px;
     margin-bottom: 15px;
     align-items: right;
@@ -50,6 +53,12 @@
     color: var(--text-dark);
     background-image: none !important; /* prevent lastpass */
     
+  }
+  .create-workout input{
+    display: inline-block;
+    width: calc(100% - 100px);
+
+
   }
 
   
@@ -77,4 +86,15 @@
   .form-group {
     display: flex;
     align-items: left;
+  }
+
+  .date input {
+    max-width: 255px;
+
+  }
+  btn-primary{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
   }
