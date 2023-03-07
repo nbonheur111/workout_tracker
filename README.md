@@ -13,13 +13,13 @@ To run this app, follow these steps:
 
 
 **Technologies Used** <br>
-*React
-*Node.js
-*Express
-*MongoDB
-*Passport
-*Bcrypt
-*Render
+* React
+* Node.js
+* Express
+* MongoDB
+* Passport
+* Bcrypt
+* Render
 
 
 **Features** <br>
