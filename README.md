@@ -32,8 +32,8 @@ Integrate with fitness tracking devices, such as Fitbit or Apple Watch, to autom
 Add a feature for tracking nutrition and meal planning in addition to workouts.
 Improve the UI and design of the app to enhance the user experience.
 
-`**Technologies Used**`
+**Technologies Used**
 This app was built using React, Node.js, Express, and MongoDB. User authentication was implemented using passport and bcrypt for password hashing. The app is deployed on render.
 
-`**Author **`
+**Author **
 This app was developed by Bonheur. Feel free to contact me at https://www.linkedin.com/in/nbonheur111/ with any questions or feedback.
