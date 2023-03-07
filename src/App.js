@@ -8,12 +8,18 @@ import WorkoutHistory from './pages/workout_history';
 import EditWorkout from './pages/edit'
 import Navbar from './components/nav';
 import Footer from './components/footer'
+import axios from 'axios'
 
 function App() {
 
   const [ user, setUser ] = useState(null);
 
-   const handleLogout = () => {
+   const handleLogout = async() => {
+    let response =  await axios({
+      method: "PUT",
+      url: '/logout'
+
+    })
     setUser(null);
   };
 

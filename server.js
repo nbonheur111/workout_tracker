@@ -67,6 +67,23 @@ app.get('/session-info', (req, res) => {
 });
 
 
+
+app.put( '/logout', (req, res) => {
+    try {
+        req.logOut((err)=> {
+            if(err){
+                console.log(err)
+            }
+        })
+      
+    } catch (error) {
+        console.log(error)
+        res.send("Logout failed")
+    }
+    res.send("logout successful")
+    
+
+})
 //delete workout
 
 

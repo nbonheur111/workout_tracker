@@ -72,14 +72,14 @@ const EditWorkout = () => {
       setVisibleWorkouts(visibleWorkouts - 4);
     }
   };
-  
+ 
 const visibleData = workoutData.slice(startIndex, visibleWorkouts);
 
   return (
     <div className='history-container'>
       <h2>Choose a workout to edit</h2>
       {editingId ? (
-        <form>
+        <form onSubmit={ (e) => e.preventDefault()}>
           <label>Workout</label>
           <select value={workout} onChange={(e) => setWorkout(e.target.value)}>
             <option value="">Select a workout</option>
