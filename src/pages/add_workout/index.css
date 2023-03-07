@@ -89,12 +89,12 @@
   }
 
   .date input {
-    max-width: 255px;
+    max-width: 270px;
 
   }
-  btn-primary{
+
+  .form-group:last-child {
     display: flex;
     justify-content: center;
-    text-align: center;
-    
   }
+  

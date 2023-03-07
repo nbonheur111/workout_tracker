@@ -6,7 +6,6 @@ import "./index.css"
 
 const CreateWorkout = () => {
   const [state, setState] = useState({
-    username: '',
     workout: '',
     duration: '',
     description: '',
@@ -45,17 +44,7 @@ const CreateWorkout = () => {
     <div className="create-workout">
       <h2>Log an Exercise  </h2>
       <form autoComplete='off' onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username: <br/> </label>
-          <input 
-            type="text" 
-            name='username'
-            value={state.username} 
-            onChange={handleChange} 
-            required 
-            id="username"
-          />
-        </div>
+        
         <div className="form-group">
           <label htmlFor="workout">Workout: <br/></label>
           <select 
@@ -109,7 +98,7 @@ const CreateWorkout = () => {
           </div>
         </div>
         <div className="form-group">
-          <button type="submit" className="btn-primary" disabled={disable}>Create Exercise Log</button>
+          <button type="submit" className="submit-btn" disabled={disable}>Create Exercise Log</button>
         </div>
       </form>
     </div>

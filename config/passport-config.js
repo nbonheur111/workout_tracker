@@ -19,7 +19,7 @@ module.exports = async function(passport) {
             console.log("got the user ", user);
 
             if(!user){
-                return done(null, false, {message: "username or password incorrect!"})
+                return done(null, false, {message: 'Incorrect email or password.'})
             }
             //if user exist, check password match
 
@@ -29,7 +29,7 @@ module.exports = async function(passport) {
                     //return the  user if the password match
                     return done(null, user, {message: "user found"});
                 }else {
-                    return done(null, false, {message: "Email or password incorrect"})
+                    return done(null, false, {message: 'Incorrect email or password.'})
                 }
             })
 

@@ -51,13 +51,13 @@ export const getWorkoutHistory = async () => {
             method: "GET",
             url: "/users/history"
         })
-        console.log(serverResponse)
+        console.log("server said..",serverResponse)
         return serverResponse;
     } catch (error) {
         console.error(error);
         throw new Error(error.message);
     }
-}
+}   
 
 //add workout
 export const addWorkout = async (formData) => {

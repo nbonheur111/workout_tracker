@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+`** Workout Tracker App **`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This is a web application for tracking your workout routines. It allows you to create, view, edit, and delete workouts, as well as keep track of your workout history. The app provides highlight and trends for the last weeks.
 
-In the project directory, you can run:
+`** Getting Started **`
+To run this app, follow these steps:
 
-### `npm start`
+Clone the repository to your local machine.
+alternatively
+Clone the repository: git clone `https://github.com/your-username/workout_tracker.git`
+Install dependencies by running npm install in the root directory.
+Start the app by running npm run dev.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+`** Features **`
+User authentication: users can sign up, log in, and log out.
+Create and log workouts: users can create new workouts and log completed workouts, including the duration and description of the workout.
+View workout history: users can view a list of their completed workouts, including the date, workout name, duration, and description.
+Edit and delete workouts: users can edit or delete workouts they've created.
+Pagination: the workout history page displays up to four workouts at a time and includes pagination buttons to navigate through multiple pages.
+Recommendations and highlights: the workout history page includes a sidebar with personalized workout recommendations and highlights of the user's recent workouts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+`** Future Improvements **`
+Here are some potential improvements that could be made to the app in the future:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Allow users to create custom workout plans and track progress towards their goals.
+Implement a social feature, allowing users to connect with friends and share workouts.
+Integrate with fitness tracking devices, such as Fitbit or Apple Watch, to automatically log workouts.
+Add a feature for tracking nutrition and meal planning in addition to workouts.
+Improve the UI and design of the app to enhance the user experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`**Technologies Used**`
+This app was built using React, Node.js, Express, and MongoDB. User authentication was implemented using passport and bcrypt for password hashing. The app is deployed on render.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`**Author **`
+This app was developed by Bonheur. Feel free to contact me at https://www.linkedin.com/in/nbonheur111/ with any questions or feedback.

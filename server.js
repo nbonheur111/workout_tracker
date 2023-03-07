@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose');
 const path = require('path');
 const logger = require('morgan');
 const cors = require('cors');
@@ -12,6 +13,7 @@ const initializePassport = require('./config/passport-config.js')
 
 const User = require('./models/user.js');
 const Workout = require('./models/workout.js')
+const ObjectId = mongoose.Types.ObjectId;
 
 const app = express();
 
@@ -158,33 +160,34 @@ app.put('/users/login', (req, res, next) => {
 
 
 
-
-
-//route to get workout
+// Route to get workout history for authenticated user
 app.get('/users/history', async(req, res) => {
-    console.log(req.body);
-
-    try {
-        const workout = await Workout.find({});
-        // console.log(workout);
-        res.json(workout)
-    
-    } catch (err) {
-        res.status(400).json(`Error: ${err}`)
-        
+    if (req.user) {
+    //   const userId = req.user._id;
+    const userId = req.user._id.toString();
+      try {
+        const workout = await Workout.find({ userId });
+        res.json(workout);
+      } catch (err) {
+        res.status(400).json(`Error: ${err}`);
+      }
+    } else {
+      res.status(401).json({ message: 'Please log In...' });
     }
-});
+  });
+
 
 //route to create a workout
 
 app.post('/users/create_workout', async(req, res) => {
 
-    console.log(req.body)
+    console.log( req.body)
+    console.log( req.user._id.toString())
 
     try {
         let workoutFromCollection = await Workout.create({
-            username: req.body.username,
-            workout:req.body.workout,
+            userId: req.user._id.toString(),
+            workout: req.body.workout,
             description: req.body.description,
             duration: req.body.duration,
             date: req.body.date
