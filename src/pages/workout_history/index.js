@@ -85,7 +85,7 @@ const WorkoutHistory = () => {
         </div>
       </div>
       <div className="right-side">
-        <Recommendations />
+        <Recommendations  workouts={workouts}/>
         <Highlights />
       </div>
       <footer className="footer">Dummy Footer</footer>

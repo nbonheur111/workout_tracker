@@ -23,12 +23,12 @@ To run this app, follow these steps:
 
 
 **Features** <br>
-User authentication: users can sign up, log in, and log out.
-Create and log workouts: users can create new workouts and log completed workouts, including the duration and description of the workout.
-View workout history: users can view a list of their completed workouts, including the date, workout name, duration, and description.
-Edit and delete workouts: users can edit or delete workouts they've created.
-Pagination: the workout history page displays up to four workouts at a time and includes pagination buttons to navigate through multiple pages.
-Recommendations and highlights: the workout history page includes a sidebar with personalized workout recommendations and highlights of the user's recent workouts.
+* User authentication: users can sign up, log in, and log out.
+* Create and log workouts: users can create new workouts and log completed workouts, including the duration and description of the workout.
+* View workout history: users can view a list of their completed workouts, including the date, workout name, duration, and description.
+* Edit and delete workouts: users can edit or delete workouts they've created.
+* Pagination: the workout history page displays up to four workouts at a time and includes pagination buttons to navigate through multiple pages.
+* Recommendations and highlights: the workout history page includes a sidebar with personalized workout recommendations and highlights of the user's recent workouts.
 
 
 **Unsolved Problems** <br>
@@ -38,11 +38,11 @@ Currently, there are no known unsolved issues with the app.
 **Future Enhancements** <br>
 Here are some potential improvements that could be made to the app in the future:
 
-Allow users to create custom workout plans and track progress towards their goals.
-Implement a social feature, allowing users to connect with friends and share workouts.
-Integrate with fitness tracking devices, such as Fitbit or Apple Watch, to automatically log workouts.
-Add a feature for tracking nutrition and meal planning in addition to workouts.
-Improve the UI and design of the app to enhance the user experience.
+* Allow users to create custom workout plans and track progress towards their goals.
+* Implement a social feature, allowing users to connect, compete with friends and share  workouts.
+* Integrate with fitness tracking devices, such as Fitbit or Apple Watch, to automatically log workouts.
+* Add a feature for tracking nutrition and meal planning in addition to workouts.
+* Improve the UI and design of the app to enhance the user experience.
 
 
 **Author** <br>
