@@ -1,5 +1,5 @@
 .footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   background-color: #000;
@@ -7,6 +7,11 @@
   display: flex;
   justify-content: space-between;
   padding: 30px;
+}
+
+.footer,.push {
+  height: 220px;
+  
 }
 
 .footer h3 {

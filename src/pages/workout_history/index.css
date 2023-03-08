@@ -4,7 +4,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  height: 80vh;
+  min-height: 100vh;
+  margin-bottom: -220px;
   margin-left: 50px;
   
 }

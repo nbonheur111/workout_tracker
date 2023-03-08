@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: 0;
+    min-height: 100vh;
+    margin-bottom: -220;
     padding: 100px;
   }
 
@@ -32,7 +34,7 @@
   
   .create-workout form label {
     font-weight: bold;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
   }
   
   .create-workout form input,

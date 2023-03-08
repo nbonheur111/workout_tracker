@@ -88,7 +88,7 @@ const WorkoutHistory = () => {
         <Recommendations  workouts={workouts}/>
         <Highlights />
       </div>
-      <footer className="footer">Dummy Footer</footer>
+      <div className='push'></div>
     </div>
   );
 };
