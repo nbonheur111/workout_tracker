@@ -53,3 +53,27 @@
   margin: 0 auto;
 }
 
+/* Adjustments for mobile devices */
+@media only screen and (max-width: 600px) {
+  .footer {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .footer h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .contact-info {
+    margin-top: 10px;
+  }
+  
+  .contact-info li {
+    margin-bottom: 5px;
+  }
+}

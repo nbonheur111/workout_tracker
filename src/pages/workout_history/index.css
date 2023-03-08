@@ -57,3 +57,26 @@
   align-items: flex-start;
   width: 30%;
 }
+
+/* Adjustments for mobile devices */
+@media only screen and (max-width: 600px) {
+  .workout-container {
+    flex-direction: column;
+    height: auto;
+    margin: 0;
+  }
+  
+  .workout-history {
+    margin: 0;
+    flex: 0 0 100%;
+  }
+  
+  .recommendations {
+    margin-top: 20px;
+    flex: 0 0 100%;
+  }
+  
+  .right-side {
+    width: 100%;
+  }
+}
