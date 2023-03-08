@@ -23,6 +23,22 @@ function App() {
     setUser(null);
   };
 
+  useEffect(() => {
+    const getSessionInfo = async () => {
+      let res = await axios('/session-info')
+      console.log(res);
+      console.log("success")
+
+      if(res.data.session.passport){
+        let user = res.data.session.passport.user;
+        console.log("user..", user)
+        setUser(user)
+      }
+    }
+    getSessionInfo();
+
+  }, [])
+
 
   const returnPage = () => {
 

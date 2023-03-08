@@ -17,7 +17,7 @@ const Auth = (props) => {
   return (
     <section className='auth-page'>
       <div>
-        <h1>WT</h1>
+        <h1 className='logo'>WT</h1>
         <div className='login-button' onClick={handleButtonClick}>{isSignup ? "Log In" : "Sign Up"} </div>
 
       </div>

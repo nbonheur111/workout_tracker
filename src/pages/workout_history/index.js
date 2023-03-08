@@ -31,7 +31,8 @@ const WorkoutHistory = () => {
     setStartIndex(startIndex - 4);
     setVisibleWorkouts(visibleWorkouts - 4);
   };
-
+  
+//function to display workouts to the user
   const displayWorkouts = () => {
 
     console.log(workouts.length)
@@ -48,11 +49,17 @@ const WorkoutHistory = () => {
      
       
     } else{
+      const sortedWorkouts = workouts.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      ); //sot the array to display the most rect workouts at the top
+      const visibleWorkoutsArray = sortedWorkouts.slice(startIndex, visibleWorkouts);
 
-      return workouts.slice(startIndex, visibleWorkouts).map((workout) => (
+      return visibleWorkoutsArray.map((workout) => (
         <div key={workout._id} className="workout-card">
           <div className="workout-header">
-            <div className="workout-date">{new Date(workout.date).toLocaleDateString()}</div>
+            <div className="workout-date">
+              {new Date(workout.date).toLocaleDateString()}
+            </div>
             <div className="workout-name">{workout.workout}</div>
           </div>
           <div className="workout-details">

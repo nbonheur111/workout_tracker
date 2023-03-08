@@ -134,23 +134,32 @@ app.put('/users/update_user/:userId',async(req, res) => {
 
 //create user route
 app.post('/users/create_user', async (req, res) => {
-    console.log(req.body)
-
-    //hash password
-    let hashedPassword = await bcrypt.hash(req.body.password, 10);
-    console.log(hashedPassword)
-
-    let userFromCollection = await User.create({
+    try {
+      // Check if email or username already exist in database
+      const existingUser = await User.findOne({
+        $or: [{ email: req.body.email }, { username: req.body.username }]
+      });
+  
+      if (existingUser) {
+        // If email or username already exists, send error message to client
+        return res.status(400).json({ message: 'Email or username already exists' });
+      }
+      // Hash password and create new user
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      const newUser = await User.create({
         email: req.body.email,
         username: req.body.username,
         name: req.body.name,
         password: hashedPassword
-    })
-
-
-    res.json("user created")
-
-})
+      });
+      // Send success message to client
+      return res.status(201).json({ message: 'User created' });
+    } catch (error) {
+      // If there is an error, send error message to client
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+  });
+  
 
 //login route
 app.put('/users/login', (req, res, next) => {

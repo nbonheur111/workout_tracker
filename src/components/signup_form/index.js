@@ -29,24 +29,33 @@ export default class SignupForm extends Component {
     }
 
     handleSubmit = async (event) => {
-        event.preventDefault(); // do not refresh the page
-        console.log("submitting")
-
-        
-
-
-        //make async call to the server with the data
-        //we will make a function in a separte file and import it here
-        let data = {...this.state}
-        delete data.confirm
-        delete data.error //delete both error and confirm as we don't need to send them on backend
-        console.log(data)
-
-        let response = await signUp(data);
-        console.log(response)
-
-
+        event.preventDefault();
+        console.log("submitting");
+    
+        let data = { ...this.state };
+        delete data.confirm;
+        delete data.error;
+        console.log(data);
+    
+        try {
+            let response = await signUp(data);
+            console.log(response);
+            this.setState({
+                email: '',
+                username: '',
+                name: '',
+                password: '',
+                confirm: ''
+            });
+            alert('Account created successfully!');
+        } catch (err) {
+            console.log(err);
+            this.setState({
+                error: err.response.data.message || 'An error occurred. Please try again later.'
+            });
+        }
     }
+    
 
     
 
@@ -78,8 +87,7 @@ export default class SignupForm extends Component {
 
             </div>
 
-            <p className='error-message' >&nbsp;{this.state.error}</p>
-
+            <p className='error-message'>&nbsp;{this.state.error}</p>
 
         </div>
       

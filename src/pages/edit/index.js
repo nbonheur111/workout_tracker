@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { getWorkoutHistory, deleteWorkout, updateWorkout } from '../../utilities/user-functions';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -16,6 +16,9 @@ const EditWorkout = () => {
   const [startIndex, setStartIndex] = useState(0); 
   const [visibleWorkouts, setVisibleWorkouts] = useState(6);
 
+ 
+
+
   useEffect(() => {
     let fetchData = async () => {
       const serverResponse = await getWorkoutHistory();
@@ -25,7 +28,7 @@ const EditWorkout = () => {
 
     fetchData();
   }, []);
-
+//delete a workout
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
     if (confirmDelete) {
@@ -72,8 +75,11 @@ const EditWorkout = () => {
       setVisibleWorkouts(visibleWorkouts - 5);
     }
   };
- 
-const visibleData = workoutData.slice(startIndex, visibleWorkouts);
+
+//sort the data with the most recent data on top
+const sortedWorkouts = workoutData.sort((a,b) => new Date(b.date)-new Date(a.date))
+
+const visibleData = sortedWorkouts.slice(startIndex, visibleWorkouts);
 
   return (
     <div className='history-container'>

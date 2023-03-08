@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useHistory } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { addWorkout } from '../../utilities/user-functions.js';
 import "./index.css"
 
 const CreateWorkout = () => {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     workout: '',
     duration: '',
     description: '',
     date: ''
   });
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -20,16 +24,39 @@ const CreateWorkout = () => {
     }));
   }
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault(); // do not refresh the page
+  //   console.log("submitting..")
+
+  //   let data = {...state};
+  //   delete data.confirm;
+
+  //   let response = await addWorkout(data)
+  //   console.log(response);
+  // }
+
   const handleSubmit = async (event) => {
     event.preventDefault(); // do not refresh the page
     console.log("submitting..")
-
+  
     let data = {...state};
     delete data.confirm;
-
-    let response = await addWorkout(data)
-    console.log(response);
+  
+    try {
+      let response = await addWorkout(data);
+      console.log(response);
+      setSuccessMessage('Exercise log created successfully.');
+      setErrorMessage('');
+      setTimeout(() => {
+        navigate('users/workout');
+      }, 2000); // redirect user to main page after 2 seconds
+    } catch (error) {
+      console.error(error);
+      setErrorMessage('Error creating exercise log. Please try again.');
+      setSuccessMessage('');
+    }
   }
+  
 
   const onChangeDate = (date) => {
     setState(prevState => ({
@@ -43,8 +70,10 @@ const CreateWorkout = () => {
   return (
     <div className="create-workout">
       <h2>Log an Exercise  </h2>
-      <form autoComplete='off' onSubmit={handleSubmit}>
-        
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+      <form autoComplete='off' onSubmit={handleSubmit} >
         <div className="form-group">
           <label htmlFor="workout">Workout: <br/></label>
           <select 
