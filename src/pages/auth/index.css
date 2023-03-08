@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: auto 0;
     height: 100%;
+    margin-top: 200px;
 }
 
 .login-button {

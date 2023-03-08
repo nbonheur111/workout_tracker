@@ -89,7 +89,7 @@ const CreateWorkout = () => {
         </div>
         <div className="form-group">
           <label  htmlFor="date">Date: <br/> </label>
-          <div className='date'>
+          <div className='date-piker'>
             <DatePicker
               selected={state.date}
               onChange={onChangeDate} 
@@ -100,7 +100,9 @@ const CreateWorkout = () => {
         <div className="form-group">
           <button type="submit" className="submit-btn" disabled={disable}>Create Exercise Log</button>
         </div>
+        
       </form>
+      <div className='push'></div>
     </div>
   );
 };

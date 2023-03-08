@@ -4,10 +4,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   margin-bottom: -220px;
   margin-left: 50px;
-  
 }
 
 .workout-history {
@@ -29,7 +28,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .workout-date {
@@ -45,18 +43,19 @@
   margin-top: auto;
   text-align: center;
 }
-
-.footer {
-  margin-top: auto;
-  text-align: center;
-}
-
 .right-side {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   width: 30%;
+}
+.pull {
+  height: 80px;
+}
+
+.push {
+height: 220px;
 }
 
 /* Adjustments for mobile devices */

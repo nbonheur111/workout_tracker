@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: 0;
-    min-height: 100vh;
-    margin-bottom: -220;
+    min-height: calc(100vh - 80px);
+    margin-bottom: -220px;
     padding: 100px;
   }
 
@@ -12,7 +12,6 @@
     display: inline-block;
     width: 100px; 
     width: calc(100% - 100px); 
-    margin-bottom: 0.5rem;
   }
   
   
@@ -38,6 +37,7 @@
   }
   
   .create-workout form input,
+  .date-picker,
   .create-workout form select,
   .create-workout form textarea {
     width: 400px;
@@ -77,9 +77,6 @@
     transition: all 0.3s ease-in-out;
   }
   
-  .create-workout form input[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
   
   .workout-form .form-group label {
     font-weight: bold;
@@ -90,11 +87,11 @@
     align-items: left;
   }
 
-  .date input {
-    max-width: 270px;
-
+  .date-piker input {
+    max-width: 280px;
   }
 
+  
   .form-group:last-child {
     display: flex;
     justify-content: center;

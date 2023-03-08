@@ -1,5 +1,5 @@
 .history-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   margin-bottom: -220px;
   font-family: Arial, sans-serif;
   font-size: 14px;

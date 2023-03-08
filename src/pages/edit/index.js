@@ -14,7 +14,7 @@ const EditWorkout = () => {
 
 
   const [startIndex, setStartIndex] = useState(0); 
-  const [visibleWorkouts, setVisibleWorkouts] = useState(4);
+  const [visibleWorkouts, setVisibleWorkouts] = useState(6);
 
   useEffect(() => {
     let fetchData = async () => {
@@ -61,15 +61,15 @@ const EditWorkout = () => {
   
   const handleNext = () => {
     if (visibleWorkouts < workoutData.length) {
-      setStartIndex(startIndex + 4);
-      setVisibleWorkouts(visibleWorkouts + 4);
+      setStartIndex(startIndex + 5);
+      setVisibleWorkouts(visibleWorkouts + 5);
     }
   };
 
   const handlePrev = () => {
     if (startIndex > 0) {
-      setStartIndex(startIndex - 4);
-      setVisibleWorkouts(visibleWorkouts - 4);
+      setStartIndex(startIndex - 5);
+      setVisibleWorkouts(visibleWorkouts - 5);
     }
   };
  
@@ -151,8 +151,9 @@ const visibleData = workoutData.slice(startIndex, visibleWorkouts);
 
       
 
-    
+      <div className='push'></div>
     </div>
+    
   );
 };
 

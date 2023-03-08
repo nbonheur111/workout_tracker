@@ -104,9 +104,7 @@ return (
           {/* Total hours spent working out all time: {totalHoursAllTime.toFixed(1)/60}{" "}
           hours */}
           </p>
-          <p>
-          YTD: {totalHoursYTD.toFixed(1)/60} hours
-          </p>
+          <p>YTD: {totalHoursYTD.toFixed(1)/60} hours</p>
            <p>
           This month:{" "}
           {totalHoursThisMonth.toFixed(1)/60} hours
