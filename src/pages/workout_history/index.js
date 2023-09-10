@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import { getWorkoutHistory } from '../../utilities/user-functions';
 import Highlights from './highlights';
 import './index.css';
 import Recommendations from './recommendation';
 
 const WorkoutHistory = () => {
+  const navigate = useNavigate();
+
   const [workouts, setWorkouts] = useState([]);
   const [visibleWorkouts, setVisibleWorkouts] = useState(4);
   const [startIndex, setStartIndex] = useState(0); 
@@ -31,8 +34,13 @@ const WorkoutHistory = () => {
     setStartIndex(startIndex - 4);
     setVisibleWorkouts(visibleWorkouts - 4);
   };
-  
+
 //function to display workouts to the user
+
+const handleCliclickStartWorkout = ()=> {
+  navigate('/workout/create')
+
+}
   const displayWorkouts = () => {
 
     console.log(workouts.length)
@@ -43,6 +51,7 @@ const WorkoutHistory = () => {
         What seems impossible today will one day become your warm-up..
         </p>
         <h3 style={{color:"blue"}}>Ready to start working out?</h3>
+        <button>Let's Go</button>
       </div>
 
       )

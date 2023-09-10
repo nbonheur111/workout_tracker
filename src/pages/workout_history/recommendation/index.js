@@ -8,6 +8,7 @@ const Recommendations = ({ workouts }) => {
   const [totalHoursLastWeek, setTotalHoursLastWeek] = useState(0);
   const [totalHoursThisWeekToDate, setTotalHoursThisWeekToDate] = useState(0);
   const [totalHoursLastWeekSameDay, setTotalHoursLastWeekSameDay] = useState(0);
+  const [diffThisWeekToDateLastWeek, setDiffThisWeekToDateLastWeek] = useState(0);
 
   useEffect(() => {
     //all time
@@ -88,12 +89,14 @@ const Recommendations = ({ workouts }) => {
     0
     );
 
-    //compare this week to date to last week same period
-    const diffThisWeekToDateLastWeek =
-    totalHoursThisWeekToDate - totalHoursLastWeekToDate;
+    // Calculate the difference between this week to date and last week same period
+    const diffThisWeekToDateLastWeek = totalHoursThisWeekToDate - totalHoursLastWeekSameDay;
+    setDiffThisWeekToDateLastWeek(diffThisWeekToDateLastWeek);
 
     setTotalHoursThisWeekToDate(totalHoursThisWeekToDate);
     setTotalHoursLastWeekSameDay(totalHoursLastWeekToDate);
+
+    
 
     }, [workouts]);
 
@@ -104,21 +107,21 @@ return (
           {/* Total hours spent working out all time: {totalHoursAllTime.toFixed(1)/60}{" "}
           hours */}
           </p>
-          <p>YTD: {totalHoursYTD.toFixed(1)/60} hours</p>
+          <p>YTD: {(totalHoursYTD/60).toFixed(1)} hours</p>
            <p>
           This month:{" "}
-          {totalHoursThisMonth.toFixed(1)/60} hours
+          {(totalHoursThisMonth /60).toFixed(1)} hours
           </p>
-          <p>Last week Total: {totalHoursLastWeek.toFixed(1)/60} hours</p>
-          <p>This week: {totalHoursThisWeek.toFixed(1)/60} hours</p>
+          <p>Last week Total: {(totalHoursLastWeek / 60).toFixed(1)} hours</p>
+          <p>This week: {(totalHoursThisWeek / 60).toFixed(1)} hours</p>
 
           <p>
           This week so far:{" "}
-          {totalHoursThisWeekToDate.toFixed(1)/60} hours
+          {(totalHoursThisWeekToDate /60).toFixed(1)} hours
           </p>
           <p>
-          Last week you were at:{" "}
-          {totalHoursLastWeekSameDay.toFixed(1)/60} hours
+          Last week same day, you were at:{" "}
+          {(totalHoursLastWeekSameDay / 60 ).toFixed(1)} hours
           </p>
           <p>
           {/* Difference between this week up to today and same period last week:{" "} */}

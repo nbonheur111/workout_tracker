@@ -57,9 +57,6 @@ export default class SignupForm extends Component {
     }
     
 
-    
-
-
   render() {
     const disable = this.state.password !== this.state.confirm;
     //disable the submit button until the two password matches
